@@ -1,3 +1,4 @@
+import { TouchEventComponent } from './../components/touch-event.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -10,13 +11,16 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TouchEventComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
+  //TouchEventComponent no va en entryComps,no lo uso
+  //para navegar, no es una pagina
   entryComponents: [
     MyApp,
     HomePage
