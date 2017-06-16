@@ -7,27 +7,45 @@
 </ion-header>
 
 <ion-content padding>
-<button
-    (click)="onClick()"
-    ion-button
-    color="secondary">
+  <button (click)="onClick()" ion-button color="secondary">
     A normal Button</button>
   <!-- con block el componente html
   deja de ser inline y pasa a ser block, ocupando toda
   la linea, tal como los elementos div -->
-  <button
-    (click)="onClick()"
-    ion-button
-    round
-    block>
+  <button (click)="onClick()" ion-button round block>
     Another Button</button>
   <!-- sin round ocupa todo pero sigue quedando un poquito
   redondeado, con full queda bien rectangular. Sin padding 
   arriba ocuparia todo. icon-only agranda el icono si solo esta el mismo -->
-  <button
-    (click)="onClick()"
-    ion-button
-    icon-left
-    block>
+  <button (click)="onClick()" ion-button icon-left block>
     <ion-icon name="home"></ion-icon>Home</button>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="star" item-left></ion-icon>
+      <h1>Heading of title</h1>
+      <p>A normal item</p>
+    </ion-item>
+    <button ion-item>A button item</button>
+  </ion-list>
+  <ion-item-group>
+    <ion-item-divider>A</ion-item-divider>
+    <ion-item>Apples</ion-item>
+    <ion-item>Avocados</ion-item>
+    <ion-item-divider>A</ion-item-divider>
+    <ion-item>Bananas</ion-item>
+    <ion-item>Berries</ion-item>
+  </ion-item-group>
+  <ion-list>
+    <ion-list-header>Privacy</ion-list-header>
+    <ion-item>Tracking</ion-item>
+    <ion-item>Personal Images</ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>Sharing</ion-list-header>
+    <ion-item>With anyone</ion-item>
+    <ion-item>None</ion-item>
+  </ion-list>
+  <ion-list reorder="true" (ionItemReorder)="reorderItems($event)">
+    <ion-item *ngFor="let item of items" > {{item}}  </ion-item>
+  </ion-list>
 </ion-content>
